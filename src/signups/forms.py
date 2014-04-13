@@ -1,9 +1,8 @@
-if _name_ == '__main__':
-    from django import forms
-    
-    from .models import SignUp
-    
-    class SignUpForm(forms.ModelForm):
-        class Meta:
-            model = SignUp
-        #code
+from django import forms
+
+from .models import SignUp
+
+class SignUpForm(forms.ModelForm):
+    class Meta:
+        model = SignUp
+    #code
