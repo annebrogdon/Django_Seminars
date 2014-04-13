@@ -1,9 +1,12 @@
-from django.contrib import admin
+"""this is a docstring """
+if __name__ == '__main__':
 
-# Register your models here.
-from .models import SignUp
-class SignUpAdmin(admin.ModelAdmin):
-    class Meta:
-        model = SignUp
+    from django.contrib import admin
+
+    # Register your models here.
+    from .models import SignUp
+    class SignUpAdmin(admin.ModelAdmin):
+        class Meta:
+            model = SignUp
         
-admin.site.register(SignUp, SignUpAdmin)
+    admin.site.register(SignUp, SignUpAdmin)
