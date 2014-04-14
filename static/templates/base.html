@@ -18,7 +18,7 @@
     <link href="/static/css/jumbotron.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="/static/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -54,44 +54,18 @@
       </div>
     </div>
 
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1>Welcome to Utah Science Seminars</h1>
-        <p>Reference the upcoming talks below, or click to see a more expanded list. Sign up to receive twitter notices for all upcoming discussions of science at The University of Utah.</p>
-        <p><a class="btn btn-primary btn-lg" role="button">See All Upcoming Talks &raquo;</a>
-        <a class="btn btn-primary btn-lg" role="button">Sign Up for Twitter Updates &raquo;</a></p>
-      </div>
-    </div>
+{% block jumbotron %}
+
+{% endblock %}
+    
 
     <div class="container">
-      <!-- Example row of columns -->
       <div class="row">
-        <div class="col-md-4">
-          <h2>Membrane Trafficking Interest Group</h2>
-          <h4>April 14th, 2013</h4>
-          <p><h4>HSEB rm 4100B, 7pm</h4></p>         
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Craig Venter</h2>
-          <h4>April 20th, 2013</h4>
-          <p><h4>APC rm 1700C, 7:30pm</h4></p>         
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Neil deGrasse Tyson</h2>
-          <h4>April 25th, 2013</h4>
-          <p><h4>HSEB rm 4100B, 7pm</h4></p>         
-          <p>April 30th, 2014. Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+          {% block content %}{% endblock %}
+          
+
         </div>
         
-        <div class="col-md-4">
-          {% block content %}{% endblock %}
-        </div>
       </div>
 
       <hr>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response, RequestContext
+from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 
 # Create your views here.
 
@@ -13,5 +13,29 @@ def home(request):
         save_it.save()
     
     return render_to_response("signup.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def talks(request):
+    
+    return render_to_response("talks.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def twittersignup(request):
+      
+    return render_to_response("twittersignup.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def createtalk(request):
+
+    return render_to_response("createtalk.html",
+                              locals(),
+                              context_instance=RequestContext(request))
+
+def sampletalk(request):
+    
+  return render_to_response("sa.html",
                               locals(),
                               context_instance=RequestContext(request))
