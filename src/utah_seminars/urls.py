@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     # Examples:
      url(r'^$', 'signups.views.home', name='home'),
      url(r'^talks', 'signups.views.talks', name='talks'),
-     url(r'^twitter-signup', 'signups.views.twittersignups', name='twittersignups'),
+     url(r'^twitter-signup', 'signups.views.twittersignup', name='twittersignup'),
      url(r'^create-talk', 'signups.views.createtalk', name='createtalk'),
      url(r'^sample-talk', 'signups.views.sampletalk', name='sampletalk'),
 

@@ -36,6 +36,6 @@ def createtalk(request):
 
 def sampletalk(request):
     
-  return render_to_response("sa.html",
+  return render_to_response("sampletalk.html",
                               locals(),
                               context_instance=RequestContext(request))
