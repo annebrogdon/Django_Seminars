@@ -5,6 +5,7 @@ from django.utils.encoding import smart_unicode
 
 class SignUp(models.Model):
     Seminar_Title = models.CharField(max_length=120, null=True, blank = True)
+    Presenter = models.CharField(max_length=120, null=True, blank = True)
     Date = models.CharField(max_length=120, null=True, blank = True)
     Description = models.CharField(max_length=600, null=True, blank = True)
     Time_Start = models.CharField(max_length=20, null=True, blank = True)
@@ -16,6 +17,6 @@ class SignUp(models.Model):
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     
     def __unicode__(self):
-        return smart_unicode(self.email)
+        return smart_unicode(self.Your_Email)
     
 
