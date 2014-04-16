@@ -10,7 +10,37 @@
 
   <!-- Table -->
   <table class="table">
-    ...
+    {% for category in categories %}
+    <tr>
+        <td>
+            {{ category.Seminar_Title }}
+        </td>
+        <td>
+            {{ category.Presenter }}
+        </td>
+        <td>
+            {{ category.Date }}
+        </td>
+        <td>
+            {{ category.Description }}
+        </td>
+        <td>
+            {{ category.Time_Start }}
+        </td>
+        <td>
+            {{ category.Time_End }}
+        </td>
+        <td>
+            {{ category.Department }}
+        </td>
+        <td>
+            {{ category.Your_Email }}
+        </td>
+        <td>
+            {{ category.Department }}
+        </td>
+    </tr>
+{% endfor %}
   </table>
 </div>
 

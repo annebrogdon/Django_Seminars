@@ -13,6 +13,7 @@ urlpatterns = patterns('',
      url(r'^twitter-signup', 'signups.views.twittersignup', name='twittersignup'),
      url(r'^create-talk', 'signups.views.createtalk', name='createtalk'),
      url(r'^sample-talk', 'signups.views.sampletalk', name='sampletalk'),
+     url(r'^create-talk-landing', 'signups.views.createtalklanding', name='createtalklanding'),
 
     # url(r'^blog/', include('blog.urls')),
 

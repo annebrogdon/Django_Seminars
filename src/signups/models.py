@@ -15,8 +15,10 @@ class SignUp(models.Model):
     Password = models.CharField(max_length=20, null=True, blank = True)
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
+    talks = models.Manager()
     
     def __unicode__(self):
-        return smart_unicode(self.Your_Email)
+        return smart_unicode(self.Seminar_Title)
+    
     
 
