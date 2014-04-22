@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.encoding import smart_unicode
+from django import forms
 
 # Create your models here.
 
@@ -13,12 +14,20 @@ class SignUp(models.Model):
     Department = models.CharField(max_length=20, null=True, blank = True)
     Your_Email = models.EmailField(null = False, blank = False)
     Password = models.CharField(max_length=20, null=True, blank = True)
+    #Password = CharField(widget=PasswordInput())
     timestamp = models.DateTimeField(auto_now_add=True, auto_now=False)
     updated = models.DateTimeField(auto_now_add=False, auto_now=True)
     talks = models.Manager()
     
     def __unicode__(self):
         return smart_unicode(self.Seminar_Title)
+    
+class FilterForm(models.Model):
+    Department = models.CharField(max_length=20, null=True, blank = True)
+    departmentChoices = forms.ModelChoiceField(queryset=SignUp.talks.all().order_by('name'))
+    
+    def __unicode__(self):
+        return smart_unicode(self.departmentChoices)
     
     
 
