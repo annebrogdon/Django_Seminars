@@ -43,10 +43,14 @@ def createtalk(request):
             # Process the data in form.cleaned_data
             # ...
             print "noo!"
+            save_it = form.save(commit=False)
+            save_it.save()
             #return HttpResponseRedirect("create-talk-landing") # Redirect after POST
             return render_to_response("createtalklanding.html",
                               locals(),
                               context_instance=RequestContext(request))
+        else:
+            print "form was not valid"
     else:
         form = SignUpForm() # An unbound form
         
