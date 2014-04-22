@@ -35,14 +35,20 @@ def twittersignup(request):
 
 def createtalk(request):
 
+    validPasswordString = 'buzzkill'
     
     if request.method == 'POST': # If the form has been submitted...
         # ContactForm was defined in the the previous section
         form = SignUpForm(request.POST or None)
+        if  not (form.data['Password'] == validPasswordString):
+            print 'Try again'
+            print
+            return render_to_response("createtalk.html",
+                              locals(),
+                              context_instance=RequestContext(request))
         if form.is_valid(): # All validation rules pass
             # Process the data in form.cleaned_data
-            # ...
-            print "noo!"
+            
             save_it = form.save(commit=False)
             save_it.save()
             #return HttpResponseRedirect("create-talk-landing") # Redirect after POST
@@ -69,3 +75,5 @@ def createtalklanding(request):
   return render_to_response("createtalklanding.html",
                               locals(),
                               context_instance=RequestContext(request))
+
+
