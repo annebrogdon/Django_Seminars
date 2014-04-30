@@ -1,3 +1,6 @@
+from django.conf import settings
+from django.contrib import messages
+from django.core.mail import send_mail
 from django.shortcuts import render, render_to_response, RequestContext, HttpResponseRedirect
 
 # Create your views here.
@@ -12,6 +15,14 @@ def home(request):
     if form.is_valid():
         save_it = form.save(commit=False)
         save_it.save()
+        #send_mail(subject, message, from_email, to_list, fail_silently = true)
+        subject = 'Thank you for your Seminar Entry'
+        message = 'Your entry has been uploaded to our database. If you have any changes, please contact the administrator at admin@utahseminars.com.'
+        from_email = settings.EMAIL_HOST_USER
+        to_list = [save_it.email, settings.EMAIL_HOST_USER]
+        
+        send_mail(subject, message, from_email, to_list, fail_silently = False)
+    
     
     return render_to_response("signup.html",
                               locals(),
@@ -51,6 +62,14 @@ def createtalk(request):
             
             save_it = form.save(commit=False)
             save_it.save()
+            #send_mail(subject, message, from_email, to_list, fail_silently = true)
+            subject = 'Thank you for your Seminar Entry'
+            message = 'Your entry has been uploaded to our database. If you have any changes, please contact the administrator at admin@utahseminars.com.'
+            from_email = settings.EMAIL_HOST_USER
+            to_list = [save_it.Your_Email, settings.EMAIL_HOST_USER]
+        
+            send_mail(subject, message, from_email, to_list, fail_silently = False)
+            
             #return HttpResponseRedirect("create-talk-landing") # Redirect after POST
             return render_to_response("createtalklanding.html",
                               locals(),
